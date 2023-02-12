@@ -1,0 +1,76 @@
+START
+
+ Check card validity
+ IF (card is valid) THEN
+    display "Enter PIN:"
+    INPUT PIN
+     Check if PIN is correct
+    IF (PIN is correct) THEN
+        display "Choose transaction type:"
+        display "1. Withdrawal"
+        INPUT transaction_type
+        IF (transaction_type = 1) THEN
+            display "Enter amount:"
+            INPUT amount
+             Check account balance
+            IF (amount <= account_balance) THEN
+                account_balance = account_balance - amount
+                DISPENSE cash
+                display "Please take your cash"
+                PRINT receipt
+            ELSE
+                display "Insufficient balance"
+            ENDIF
+        ELSE
+            display "Invalid transaction type"
+        ENDIF
+    ELSE
+        display "Invalid PIN"
+    ENDIF
+ELSE
+    display "Invalid card"
+ENDIF
+
+END
+
+
+
+
+
+
+
+
+
+
+
+
+Check card validity
+IF (card is valid) THEN
+    display "Enter PIN:"
+    INPUT PIN
+     Check if PIN is correct
+    IF (PIN is correct) THEN
+        display "Choose transaction type:"
+        display "2. Balance Inquiry"
+        INPUT transaction_type
+        IF (transaction_type = 2) THEN
+            display "Your account balance is $" + account_balance
+            PRINT receipt 
+        ELSE
+          display "Invalid transaction type"
+        ENDIF
+    ELSE
+        display "Invalid PIN"
+    ENDIF
+ELSE
+    display "Invalid card"
+ENDIF
+
+END
+
+
+
+
+
+
+
